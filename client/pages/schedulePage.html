@@ -1,0 +1,28 @@
+<template name="schedulePage">
+	{{#if currentUser}}
+	{{#if hasPage}}
+	{{#with hasPage}}
+	<div class="row">
+		<div class="col-md-2">
+			<div class="list-group">
+				<a href="#" class="list-group-item disabled">Activities</a>
+				{{#each activity}}
+				<a href="?activity={{this}}" class="list-group-item {{isActive this}}">{{this}}</a>
+				{{/each}}
+			</div>
+			<button class="btn btn-default" name="addActivity">Add Activity</button>
+			{{#if wantsToAdd}}
+			<form class="input-group">
+				<input type="text" name="inputter" class="form-control" placeholder="Class/Activity"/>
+				<span class="input-group-btn"><button class="btn btn-primary" name="finalAdd">Submit</button></span>
+			</form>
+			{{/if}}
+		</div>
+		<div class="col-md-10">
+			{{> showLarge this}}
+		</div>
+	</div>
+	{{/with}}
+	{{/if}}
+	{{/if}}
+</template>

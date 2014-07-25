@@ -1,0 +1,58 @@
+<template name="makeSchedule">
+	{{#if currentUser}}
+	<div class="modal fade modalWider" id="schedModal" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Make a Schedule!</h4>
+				</div>
+				<div class="modal-body">
+					<!--options-->
+					<div class="row">
+						<div class="col-md-12">
+							{{#with unfinishedSchedule}}
+							{{> showSchedule this}}
+							{{/with}}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-2">
+							<form>
+								<select name="interval">
+									{{#each incs}}
+									<option value="{{this}}" {{selectedInterval this}}>{{this}} min</option>
+									{{/each}}
+								</select>
+							</form>
+						</div>
+						<div class="col-md-2">
+							<form>
+								<select name="start">
+									{{#each starts}}
+									<option value="{{this}}" {{selectedStart this}}>{{this}} am</option>
+									{{/each}}
+								</select>
+							</form>
+						</div>
+						<div class="col-md-2">
+							<form>
+								<select name="end">
+									{{#each ends}}
+									<option value="{{this}}" {{selectedEnd this}}>{{this}} pm</option>
+									{{/each}}
+								</select>
+							</form>
+						</div>
+						<div class="col-md-6">
+							<div class="input-group">
+							<input type="text" class="form-control" name="name" placeholder="Schedule Name"/>
+							<span class="input-group-btn"><button class="btn btn-primary" name="add">Submit</button></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{/if}}
+</template>

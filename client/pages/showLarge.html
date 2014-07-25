@@ -1,0 +1,33 @@
+<template name="showLarge">
+<!--this template must necessarily be given a context schedule with which to work -->
+	<div class="container-fluid">
+		<table class="table table-bordered table-condensed">
+			<thead>
+				<tr>
+					<th>Time</th>
+					<th><a href="#Sunday" class="{{isActive Sunday}}">Sunday</a></th>
+					<th><a href="#Monday" class="{{isActive Monday}}">Monday</a></th>
+					<th><a href="#Tuesday" class="{{isActive Tuesday}}">Tuesday</a></th>
+					<th><a href="#Wednesday" class="{{isActive Wednesday}}">Wednesday</a></th>
+					<th><a href="#Thursday" class="{{isActive Thursday}}">Thursday</a></th>
+					<th><a href="#Friday" class="{{isActive Friday}}">Friday</a></th>
+					<th><a href="#Saturday" class="{{isActive Saturday}}">Saturday</a></th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each Times}}
+				<tr>
+					<td>{{Time}}</td>
+					<td>{{Sunday}}</td>
+					<td>{{Monday}}</td>
+					<td>{{Tuesday}}</td>
+					<td>{{Wednesday}}</td>
+					<td>{{Thursday}}</td>
+					<td>{{Friday}}</td>
+					<td>{{Saturday}}</td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+</template>

@@ -1,0 +1,11 @@
+Meteor.methods({
+	addActivity:function(uid,act){
+		Meteor.users.update({
+			_id:uid
+		},{
+			$addToSet:{
+				activities:act
+			}
+		});
+	}
+})
