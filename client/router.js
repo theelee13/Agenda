@@ -11,9 +11,6 @@ Router.map(function(){
 			if(this.params.activity){
 				Session.set('selectedActivity',this.params.activity);
 			}
-			if(this.params.hash){
-				Session.set('selectedDay',this.params.hash);
-			}
 		}
 	});
 });

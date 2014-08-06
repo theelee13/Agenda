@@ -11,19 +11,11 @@ Meteor.methods({
 			}
 		});
 	},
-	addEvent: function(sid,time,day,tex){
+	changeEvent: function(sid,time,day,tex){
 		var obj = {};
+		//allow deletion of activity
 		obj["Times.$."+day]=tex;
-			Schedules.update({_id:sid,"Times.Time":time},{$set:obj});
-		/*
-				Schedules.update({_id:sid,"Times.Time":time},{$set:{"Times.$.Monday":tex}});
-				Schedules.update({_id:sid,"Times.Time":time},{$set:{"Times.$.Tuesday":tex}});
-				Schedules.update({_id:sid,"Times.Time":time},{$set:{"Times.$.Wednesday":tex}});
-				Schedules.update({_id:sid,"Times.Time":time},{$set:{"Times.$.Thursday":tex}});
-				Schedules.update({_id:sid,"Times.Time":time},{$set:{"Times.$.Friday":tex}});
-				Schedules.update({_id:sid,"Times.Time":time},{$set:{"Times.$.Saturday":tex}});
-		}
-		*/
+		Schedules.update({_id:sid,"Times.Time":time},{$set:obj});
 	}
 })
 

@@ -1,15 +1,8 @@
-Template.showLarge.isActive = function(str){
-	if(Session.equals('selectedDay',str)){
-		return "active";
-	}
-	return "";
-}
-
 Template.showLarge.events = {
-	'click td':function(){
-		var day = Session.get('selectedDay');
+	'click td':function(event){
+		var day = event.target.id;
 		var act = Session.get('selectedActivity');
 		var sched = Session.get('thisWeek');
-		Meteor.call('addEvent',sched,this.Time,day,act);
+		Meteor.call('changeEvent',sched,this.Time,day,act);
 	}
 }
