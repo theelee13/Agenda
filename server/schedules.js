@@ -16,6 +16,7 @@ Meteor.methods({
 		//allow deletion of activity
 		obj["Times.$."+day]=tex;
 		Schedules.update({_id:sid,"Times.Time":time},{$set:obj});
+		console.log('added')
 	}
 })
 
