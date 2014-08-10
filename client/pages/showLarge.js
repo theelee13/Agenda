@@ -13,6 +13,9 @@ Template.showLarge.events = {
 Template.showLarge.getColor = function(day){
 	switch(day.color){
 		case "blue":return "info";
+		case "red":return "danger";
+		case "green":return "success";
+		case "yellow":return "warning";
 		default:return "";
 	}
 }
