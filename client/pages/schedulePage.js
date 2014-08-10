@@ -1,6 +1,7 @@
 Meteor.startup(function(){
 	Session.set('wantsToAdd',false);
 	Session.set('selectedActivity',null);
+	Session.set('chosenColor',"white");
 });
 
 Template.schedulePage.hasPage = function(){
@@ -38,7 +39,7 @@ Template.schedulePage.events = {
 }
 
 Template.schedulePage.isActive = function(obj){
-	if(Session.equals('selectedActivity',obj)){
+	if(Session.get('selectedActivity').activity===obj){
 		return "active";
 	}
 	return "";

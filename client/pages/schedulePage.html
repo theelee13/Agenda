@@ -7,9 +7,7 @@
 			<div class="list-group">
 				<a href="#" class="list-group-item disabled">Activities</a>
 				{{#each activities}}
-				{{#with activity}}
-				<a href="?activity={{this}}" class="list-group-item {{isActive this}}">{{this}}</a>
-				{{/with}}
+					<a href="?activity={{activity}}&color={{color}}" class="list-group-item {{isActive activity}}">{{activity}}</a>
 				{{/each}}
 			</div>
 			<button class="btn btn-default" name="addActivity">Add Activity</button>

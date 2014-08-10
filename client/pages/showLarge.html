@@ -18,13 +18,13 @@
 				{{#each Times}}
 				<tr>
 					<td id="Time">{{Time}}</td>
-					<td id="Sunday">{{Sunday}}</td>
-					<td id="Monday">{{Monday}}</td>
-					<td id="Tuesday">{{Tuesday}}</td>
-					<td id="Wednesday">{{Wednesday}}</td>
-					<td id="Thursday">{{Thursday}}</td>
-					<td id="Friday">{{Friday}}</td>
-					<td id="Saturday">{{Saturday}}</td>
+					<td id="Sunday">{{#with Sunday}}<span class="alert {{getColor color}}">{{activity}}</span>{{/with}}</td>
+					<td id="Monday">{{#with Monday}}<span class="{{getColor color}}">{{activity}}</span>{{/with}}</td>
+					<td id="Tuesday">{{#with Tuesday}}<span class="{{getColor color}}">{{activity}}</span>{{/with}}</td>
+					<td id="Wednesday">{{#with Wednesday}}<span class="{{getColor color}}">{{activity}}</span>{{/with}}</td>
+					<td id="Thursday">{{#with Thursday}}<span class="{{getColor color}}">{{activity}}</span>{{/with}}</td>
+					<td id="Friday">{{#with Friday}}<span class="{{getColor color}}">{{activity}}</span>{{/with}}</td>
+					<td id="Saturday">{{#with Saturday}}<span class="{{getColor color}}">{{activity}}</span>{{/with}}</td>
 				</tr>
 				{{/each}}
 			</tbody>

@@ -9,7 +9,7 @@ Router.map(function(){
 		onBeforeAction:function(){
 			Session.set('thisWeek',this.params._id);
 			if(this.params.activity){
-				Session.set('selectedActivity',this.params.activity);
+				Session.set('selectedActivity',{activity:this.params.activity,color:this.params.color});
 			}
 		}
 	});
