@@ -1,10 +1,10 @@
 Meteor.methods({
-	addActivity:function(uid,act){
+	addActivity:function(uid,act,color){
 		Meteor.users.update({
 			_id:uid
 		},{
 			$addToSet:{
-				activities:act
+				activities:{activity:act,color:color}
 			}
 		});
 	}

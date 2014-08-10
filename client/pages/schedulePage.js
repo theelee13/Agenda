@@ -11,7 +11,7 @@ Template.schedulePage.wantsToAdd = function(){
 	return Session.equals('wantsToAdd',true);
 }
 
-Template.schedulePage.activity = function(){
+Template.schedulePage.activities = function(){
 	return Meteor.user().activities;
 }
 
@@ -27,15 +27,26 @@ Template.schedulePage.events = {
 	},
 	'click button[name=finalAdd]':function(event,template){
 		event.preventDefault();
+		var color = Session.get('chosenColor');
 		var act = template.find('input[name=inputter]').value;
-		Meteor.call('addActivity',Meteor.user()._id,act);
+		Meteor.call('addActivity',Meteor.user()._id,act,color);
 		Session.set('wantsToAdd',false);
+	},
+	'change select[name=color]': function(event,template){
+		Session.set('chosenColor',event.currentTarget.value);
 	}
 }
 
 Template.schedulePage.isActive = function(obj){
 	if(Session.equals('selectedActivity',obj)){
 		return "active";
+	}
+	return "";
+}
+
+Template.schedulePage.selectedColor = function(name){
+	if(Session.equals('chosenColor',name)){
+		return "selected";
 	}
 	return "";
 }
