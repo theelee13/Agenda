@@ -10,9 +10,9 @@ Template.showLarge.events = {
 	}
 }
 
-Template.showLarge.getColor = function(color){
-	switch(color){
-		case "blue":return "alert-active";
+Template.showLarge.getColor = function(day){
+	switch(day.color){
+		case "blue":return "info";
 		default:return "";
 	}
 }
