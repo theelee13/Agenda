@@ -6,7 +6,7 @@ Template.showLarge.events = {
 		}
 		var act = Session.get('selectedActivity');
 		var sched = Session.get('thisWeek');
-		Meteor.call('changeEvent',sched,this.Time,day,{activity:act.activity,color:act.color});
+		Meteor.call('changeEvent',sched,this.Time,day,{activity:act.activity,color:act.color,finished:false});
 	}
 }
 
@@ -18,4 +18,11 @@ Template.showLarge.getColor = function(day){
 		case "yellow":return "warning";
 		default:return "";
 	}
+}
+
+Template.showLarge.isFinished = function(obj){
+	if(obj.finished===true){
+		return "glyphicon glyphicon-ok";
+	}
+	return "";
 }

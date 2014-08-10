@@ -41,6 +41,9 @@ Template.makeSchedule.events = {
 		var name = template.find("input[name=name]").value;
 		var sched = Session.get('unfinished');
 		sched.Name=name;
+		if(_.isBlank(name)){
+			return;
+		}
 		Meteor.call('addSchedule',Meteor.user()._id,sched);
 		template.find("input[name=name]").value="";
 		$('#schedModal').modal('hide');

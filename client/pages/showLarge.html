@@ -18,13 +18,13 @@
 				{{#each Times}}
 				<tr>
 					<td id="Time">{{Time}}</td>
-					<td id="Sunday" class="{{getColor Sunday}}">{{#with Sunday}}{{activity}}{{/with}}</td>
-					<td id="Monday" class="{{getColor Monday}}">{{#with Monday}}{{activity}}{{/with}}</td>
-					<td id="Tuesday" class="{{getColor Tuesday}}">{{#with Tuesday}}{{activity}}{{/with}}</td>
-					<td id="Wednesday" class="{{getColor Wednesday}}">{{#with Wednesday}}{{activity}}{{/with}}</td>
-					<td id="Thursday" class="{{getColor Thursday}}">{{#with Thursday}}{{activity}}{{/with}}</td>
-					<td id="Friday" class="{{getColor Friday}}">{{#with Friday}}{{activity}}{{/with}}</td>
-					<td id="Saturday" class="{{getColor Saturday}}">{{#with Saturday}}{{activity}}{{/with}}</td>
+					<td id="Sunday" class="{{getColor Sunday}}">{{#with Sunday}}{{activity}}<span class="{{isFinished this}}"></span>{{/with}}</td>
+						<td id="Monday" class="{{getColor Monday}}">{{#with Monday}}{{activity}}<span class="{{isFinished this}}"></span>{{/with}}</td>
+						<td id="Tuesday" class="{{getColor Tuesday}}">{{#with Tuesday}}{{activity}}<span class="{{isFinished this}}"></span>{{/with}}</td>
+						<td id="Wednesday" class="{{getColor Wednesday}}">{{#with Wednesday}}{{activity}}<span class="{{isFinished this}}"></span>{{/with}}</td>
+						<td id="Thursday" class="{{getColor Thursday}}">{{#with Thursday}}{{activity}}<span class="{{isFinished this}}"></span>{{/with}}</td>
+					<td id="Friday" class="{{getColor Friday}}">{{#with Friday}}{{activity}}<span class="{{isFinished this}}"></span>{{/with}}</td>
+					<td id="Saturday" class="{{getColor Saturday}}">{{#with Saturday}}{{activity}}<span class="{{isFinished this}}"></span>{{/with}}</td>
 				</tr>
 				{{/each}}
 			</tbody>
