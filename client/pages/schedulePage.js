@@ -30,6 +30,9 @@ Template.schedulePage.events = {
 		event.preventDefault();
 		var color = Session.get('chosenColor');
 		var act = template.find('input[name=inputter]').value;
+		if(checkDup(act)){
+			return;
+		}
 		Meteor.call('addActivity',Meteor.user()._id,act,color);
 		Session.set('wantsToAdd',false);
 	},
@@ -50,4 +53,13 @@ Template.schedulePage.selectedColor = function(name){
 		return "selected";
 	}
 	return "";
+}
+
+var checkDup = function(activity){
+	var user = Meteor.user();
+	var activities = _.pluck(user.activities,'activity');
+	if(_.contains(activities,activity)){
+		return true;
+	}
+	return false;
 }
