@@ -11,7 +11,25 @@ Template.showLarge.events = {
 			return;
 		}
 		var sched = Session.get('thisWeek');
-		Session.set('chooseAct',{activity:event.target.innerText,color:event.target.className});
+		var color;
+		switch(event.target.className){
+		case "info":
+			color= "blue";
+			break;
+		case "success":
+			color= "green";
+			break;
+		case "warning":
+			color= "yellow";
+			break;
+		case "danger":
+			color= "red";
+			break;
+		default:
+			color= "white";
+			break;
+		}
+		Session.set('chooseAct',{activity:event.target.innerText,color:color});
 		if(_.isBlank(event.target.innerText)){
 			Meteor.call('changeEvent',sched,this.Time,day,{activity:act.activity,color:act.color,finished:false});
 		}else{
