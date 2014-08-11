@@ -2,6 +2,8 @@ Meteor.startup(function(){
 	Session.set('wantsToAdd',false);
 	Session.set('selectedActivity',null);
 	Session.set('chosenColor',"white");
+	Session.set('lastDay',null);
+	Session.set('lastTime',null);
 });
 
 Template.schedulePage.hasPage = function(){
