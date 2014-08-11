@@ -6,7 +6,11 @@ Template.showLarge.events = {
 		}
 		var act = Session.get('selectedActivity');
 		var sched = Session.get('thisWeek');
+		Session.set('chooseAct',{activity:event.target.innerText,color:event.target.className});
+		$('#actModal').modal('show');
+		/*
 		Meteor.call('changeEvent',sched,this.Time,day,{activity:act.activity,color:act.color,finished:false});
+		*/
 	}
 }
 

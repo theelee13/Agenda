@@ -42,6 +42,9 @@ Template.schedulePage.events = {
 }
 
 Template.schedulePage.isActive = function(obj){
+	if(Session.equals('selectedActivity',null)){
+		return "";
+	}
 	if(Session.get('selectedActivity').activity===obj){
 		return "active";
 	}
