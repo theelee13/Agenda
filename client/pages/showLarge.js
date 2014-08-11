@@ -7,6 +7,9 @@ Template.showLarge.events = {
 		Session.set('lastDay',day);
 		Session.set('lastTime',this.Time);
 		var act = Session.get('selectedActivity');
+		if(act===null||act===undefined){
+			return;
+		}
 		var sched = Session.get('thisWeek');
 		Session.set('chooseAct',{activity:event.target.innerText,color:event.target.className});
 		if(_.isBlank(event.target.innerText)){

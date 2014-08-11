@@ -35,6 +35,9 @@ Template.schedulePage.events = {
 		if(checkDup(act)){
 			return;
 		}
+		if(_.isBlank(act)){
+			return;
+		}
 		Meteor.call('addActivity',Meteor.user()._id,act,color);
 		Session.set('wantsToAdd',false);
 	},
