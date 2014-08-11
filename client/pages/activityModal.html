@@ -1,0 +1,36 @@
+<template name="activityModal">
+	{{#if currentUser}}
+	{{#with chosen}}
+	<div class="modal fade modalWider" id="actModal" tabindex="-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Edit Activity</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-12">
+							<h4>Click an Activity to switch</h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="list-group">
+								{{#each activities}}
+									<a class="list-group-item {{isActive activity}}" id="{{color}}">{{activity}}</a>
+								{{/each}}
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<button class="btn btn-primary" name="add">Submit</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{/with}}
+	{{/if}}
+</template>
